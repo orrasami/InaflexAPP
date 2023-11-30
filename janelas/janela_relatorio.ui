@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Relatorios</class>
+ <widget class="QWidget" name="Relatorios">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>399</width>
+    <height>296</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>RELATORIOS</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../static/favicon.ico</normaloff>../static/favicon.ico</iconset>
+  </property>
+  <widget class="QLabel" name="label_12">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>1061</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
+   </property>
+   <property name="text">
+    <string>SISTEMA INTERNO INAFLEX - SII - MODULO DE WORKFLOW</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_11">
+   <property name="geometry">
+    <rect>
+     <x>-10</x>
+     <y>-10</y>
+     <width>1071</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: black;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_10">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>31</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../static/apple-touch-icon.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_13">
+   <property name="geometry">
+    <rect>
+     <x>29</x>
+     <y>10</y>
+     <width>361</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
+   </property>
+   <property name="text">
+    <string>SII - GERAR RELATÓRIOS</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="Line" name="line">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>146</y>
+     <width>381</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="inputDataFinal">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>105</y>
+     <width>271</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 10px;
+border: 1px solid #CDC99B;</string>
+   </property>
+   <property name="frame">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="readOnly">
+    <bool>false</bool>
+   </property>
+   <property name="buttonSymbols">
+    <enum>QAbstractSpinBox::NoButtons</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="line_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>226</y>
+     <width>381</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>-80</x>
+     <y>110</y>
+     <width>161</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Data Final:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="dropdownRepresentantes">
+   <property name="geometry">
+    <rect>
+     <x>146</x>
+     <y>70</y>
+     <width>231</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 10px;
+border: 1px solid #CDC99B;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>-80</x>
+     <y>70</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Data inicial:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkFaturados">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>204</y>
+     <width>151</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Faturados no periodo</string>
+   </property>
+  </widget>
+  <widget class="Line" name="line_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>186</y>
+     <width>381</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkEnviadosFaturamento">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>166</y>
+     <width>151</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Enviados para faturamento</string>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="inputDataInicial">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>70</y>
+     <width>271</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 10px;
+border: 1px solid #CDC99B;</string>
+   </property>
+   <property name="frame">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="readOnly">
+    <bool>false</bool>
+   </property>
+   <property name="buttonSymbols">
+    <enum>QAbstractSpinBox::NoButtons</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnGerarRelatorios">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>250</y>
+     <width>371</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">	border-radius: 10px;
+	border: 1px solid rgb(0,0,0);
+    background-color: #CDC99B;
+    color: white;</string>
+   </property>
+   <property name="text">
+    <string>Gerar Relatório</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkNoFaturamento">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>204</y>
+     <width>151</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Aguardando faturamento</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkLiquidados">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>166</y>
+     <width>151</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Liquidados</string>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>inputDataInicial</tabstop>
+  <tabstop>inputDataFinal</tabstop>
+  <tabstop>checkEnviadosFaturamento</tabstop>
+  <tabstop>checkLiquidados</tabstop>
+  <tabstop>checkFaturados</tabstop>
+  <tabstop>checkNoFaturamento</tabstop>
+  <tabstop>btnGerarRelatorios</tabstop>
+  <tabstop>dropdownRepresentantes</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

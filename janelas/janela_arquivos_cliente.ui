@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>janelaMensagemCliente</class>
+ <widget class="QWidget" name="janelaMensagemCliente">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>742</width>
+    <height>399</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Exigencias do Cliente</string>
+  </property>
+  <widget class="QLabel" name="labelTagCliente">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>90</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>CLIENTE:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="inputCnpj">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>20</y>
+     <width>191</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+	border-radius: 10px;
+	border: 1px solid black;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="readOnly">
+    <bool>false</bool>
+   </property>
+   <property name="clearButtonEnabled">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnCNPJ">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>20</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: rgb(223, 223, 223);
+	border-radius: 10px;
+	border: 1px solid rgb(0, 0, 0);
+}</string>
+   </property>
+   <property name="text">
+    <string>Procurar</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelNomeCliente">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>90</y>
+     <width>281</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Selecionar cliente</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>411</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #CDC99B;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="textExigencias">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>120</y>
+     <width>361</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkDeclaracao">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>300</y>
+     <width>151</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Li e conferi os dados acima</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnLiquidar">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>290</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: rgb(223, 223, 223);
+	border-radius: 10px;
+	border: 1px solid rgb(0, 0, 0);
+}</string>
+   </property>
+   <property name="text">
+    <string>Liquidar</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelPedido">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>25</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>#####</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnCancelar">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>350</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: rgb(223, 223, 223);
+	border-radius: 10px;
+	border: 1px solid rgb(0, 0, 0);
+}</string>
+   </property>
+   <property name="text">
+    <string>Cancelar</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>-4</x>
+     <y>330</y>
+     <width>421</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: rgb(0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnInfoAdicional">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>350</y>
+     <width>171</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: rgb(223, 223, 223);
+	border-radius: 10px;
+	border: 1px solid rgb(0, 0, 0);
+}</string>
+   </property>
+   <property name="text">
+    <string>Informacoes Adicionais</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>406</x>
+     <y>-8</y>
+     <width>351</width>
+     <height>431</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: rgb(188,188,188)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="textObsAcabamento">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>40</y>
+     <width>311</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="textObsFaturamento">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>230</y>
+     <width>311</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelTagCliente_2">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>20</y>
+     <width>301</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>INFORMAÇÕES IMPORTANTES - ACABAMENTO:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelTagCliente_3">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>210</y>
+     <width>301</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>INFORMAÇÕES IMPORTANTES - FATURAMENTO:</string>
+   </property>
+  </widget>
+  <zorder>label_2</zorder>
+  <zorder>label</zorder>
+  <zorder>labelTagCliente</zorder>
+  <zorder>inputCnpj</zorder>
+  <zorder>btnCNPJ</zorder>
+  <zorder>labelNomeCliente</zorder>
+  <zorder>textExigencias</zorder>
+  <zorder>checkDeclaracao</zorder>
+  <zorder>btnLiquidar</zorder>
+  <zorder>btnCancelar</zorder>
+  <zorder>labelPedido</zorder>
+  <zorder>btnInfoAdicional</zorder>
+  <zorder>label_3</zorder>
+  <zorder>textObsAcabamento</zorder>
+  <zorder>textObsFaturamento</zorder>
+  <zorder>labelTagCliente_2</zorder>
+  <zorder>labelTagCliente_3</zorder>
+ </widget>
+ <tabstops>
+  <tabstop>inputCnpj</tabstop>
+  <tabstop>textExigencias</tabstop>
+  <tabstop>checkDeclaracao</tabstop>
+  <tabstop>btnLiquidar</tabstop>
+  <tabstop>btnCancelar</tabstop>
+  <tabstop>btnCNPJ</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

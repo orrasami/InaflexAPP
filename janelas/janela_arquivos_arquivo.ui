@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>telaIncluirArquivos</class>
+ <widget class="QDialog" name="telaIncluirArquivos">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>749</width>
+    <height>281</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>INCLUIR PEDIDO</string>
+  </property>
+  <widget class="QLabel" name="labelErro">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>751</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>17</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    color: white;
+}</string>
+   </property>
+   <property name="text">
+    <string>Incluir Arquivo</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnIncluirPedidoTela">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>170</y>
+     <width>211</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	border-radius: 10px;
+	border: 1px solid rgb(0,0,0);
+    background-color: #CDC99B;
+    color: white;
+}</string>
+   </property>
+   <property name="text">
+    <string>Incluir</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="inputIncluirIndice">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>103</y>
+     <width>113</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+	border-radius: 10px;
+	border: 1px solid #CDC99B;
+}</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkIncluirAtual">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>140</y>
+     <width>91</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	border: 1px solid #CDC99B;
+}</string>
+   </property>
+   <property name="text">
+    <string>Arquivo</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>110</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Indice</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>70</y>
+     <width>451</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+	background-color: rgb(188, 188, 188);
+	border-radius: 15px;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>-4</x>
+     <y>-8</y>
+     <width>761</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+	background-color: #CDC99B;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="plainTextEdit">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>120</y>
+     <width>211</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPlainTextEdit {
+	background-color: rgb(0, 0, 0, 0);
+	border: 0px;
+}</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="plainText">
+    <string>01 - ORÇAMENTO DOUBLE CHECK
+02 - PEDIDO DO CLIENTE
+03 - COTAÇÃO DO FORNECEDOR
+04 - ANALISE DE CONTRATO
+05 - CROQUIS, DESENHOS, PLAQUETAS
+06 - DESVIOS
+07 - SOLICITAÇÃO DO CLIENTE
+08 - ORCAMENTO ENVIADO</string>
+   </property>
+   <property name="backgroundVisible">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="plainTextEdit_2">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>120</y>
+     <width>211</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPlainTextEdit {
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="plainText">
+    <string>09 - PIT
+10 - INFO RELEV. PRODUÇÃO
+11 - INFO RELEV. ENTREGA
+12 - INFO RELEV. FATURAMENTO
+13 - INFO RELEV. INSPEÇÃO
+14 - INFO RELEV. DIRETORIA
+15 - OUTROS ARQUIVOS</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>70</y>
+     <width>451</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+	background: black;
+	color: white;
+	border: 1px solid #CDC99B;
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>LEGENDA</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelPedido">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>70</y>
+     <width>201</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Selecionar Pedido</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnCancela">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>220</y>
+     <width>211</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	border-radius: 10px;
+	border: 1px solid rgb(0,0,0);
+    background-color: #CDC99B;
+    color: white;
+}</string>
+   </property>
+   <property name="text">
+    <string>Cancelar</string>
+   </property>
+  </widget>
+  <zorder>label_4</zorder>
+  <zorder>labelErro</zorder>
+  <zorder>btnIncluirPedidoTela</zorder>
+  <zorder>inputIncluirIndice</zorder>
+  <zorder>checkIncluirAtual</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_3</zorder>
+  <zorder>plainTextEdit</zorder>
+  <zorder>plainTextEdit_2</zorder>
+  <zorder>label_5</zorder>
+  <zorder>labelPedido</zorder>
+  <zorder>btnCancela</zorder>
+ </widget>
+ <tabstops>
+  <tabstop>inputIncluirIndice</tabstop>
+  <tabstop>checkIncluirAtual</tabstop>
+  <tabstop>btnIncluirPedidoTela</tabstop>
+  <tabstop>btnCancela</tabstop>
+  <tabstop>plainTextEdit</tabstop>
+  <tabstop>plainTextEdit_2</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
