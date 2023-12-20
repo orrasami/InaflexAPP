@@ -200,7 +200,7 @@ if __name__ == "__main__":
     widget_uteis = QtWidgets.QStackedWidget()
     janela_uteis = Uteis(widget_uteis, bd_oracle_ok, desenvolvimento, nome_usuario)
     widget_uteis.addWidget(janela_uteis)
-    widget_uteis.setFixedSize(406, 258)
+    widget_uteis.setFixedSize(406, 351)
 
     # Janela Entregas
     widget_entregas = QtWidgets.QStackedWidget()

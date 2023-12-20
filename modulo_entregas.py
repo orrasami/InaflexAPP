@@ -25,6 +25,7 @@ with open('setup.json', 'r') as file:
 for x, y in d1_json.items():
     path_download = y['download']
 
+
 class Entregas(QMainWindow, Ui_Entregas):
     def __init__(self, bd_oracle_ok, parent=None):
         super().__init__(parent)

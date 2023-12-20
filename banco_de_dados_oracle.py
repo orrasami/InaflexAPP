@@ -32,6 +32,63 @@ class BDBohm:
             respostas = self.conexao.execute(consulta)
             return respostas
 
+    def pegar_itens_pedido(self, pedido):
+        consulta = (f"select p.codigo, i.quantidade, i.preco_venda "
+                    f"from inaflex.pedidos_itens i, inaflex.produtos p "
+                    f"where chave_pedido = '{pedido}' and (i.chave_produto = p.cprod)")
+        respostas = self.conexao.execute(consulta)
+        return respostas
+
+
+    def procurar_chave_processo(self, produto):
+        # produto teste 80211000300
+        consulta = (f"select i.chave, i.custo_processo "
+                    f"from inaflex.processos i, inaflex.produtos p "
+                    f"where (i.chave_produto = p.cprod) and (p.codigo = '{produto}') and padrao = 'SIM'")
+        respostas = self.conexao.execute(consulta)
+        for resposta in respostas:
+            if resposta:
+                return resposta
+            else:
+                return False
+
+
+    def procurar_subitens(self, chave):
+        # chave teste 713
+        consulta = (f"select p.codigo, m.quantidade "
+                    f"from inaflex.processos_materiais m, inaflex.produtos p "
+                    f"where chave_processo = '{chave}' "
+                    f"and (m.chave_material = p.cprod)")
+        respostas = self.conexao.execute(consulta)
+        return respostas
+
+    def pegar_custos_setores(self):
+        consulta = f"SELECT CHAVE, NOME_SETOR, TAXA FROM inaflex.CUSTOS_SETORES"
+        respostas = self.conexao.execute(consulta)
+        return respostas
+
+    def pegar_custos_processo(self, processo):
+        consulta = f"SELECT chave_setor, setup, ciclo FROM inaflex.PROCESSOS_OPERACOES where chave_processo = {processo}"
+        respostas = self.conexao.execute(consulta)
+        return respostas
+
+    def pegar_ultimo_custo_de_compra(self, item):
+        consulta = (f"select i.chave, i.valor_unitario, p.codigo, u.unidade as unidade_producao, "
+                    f"p.cubagem, i.unidade as unidade_compra, c.chave_moeda "
+                    f"FROM inaflex.oc_mp_itens i, inaflex.produtos p, inaflex.unidades u, inaflex.oc_mp c "
+                    f"where (i.chave_material = p.cprod) and (u.chave = p.chave_unidade_producao) "
+                    f"and (i.chave_oc = c.chave) and (p.codigo = '{item}') "
+                    f"order by i.chave DESC FETCH FIRST 1 ROWS ONLY")
+        respostas = self.conexao.execute(consulta)
+        return respostas
+
+    def cotacao_moeda(self, moeda):
+        consulta = (f"SELECT VALOR FROM INAFLEX.VALORES WHERE CODMOEDA = '{moeda}' "
+                    f"ORDER BY CHAVE DESC FETCH FIRST 1 ROWS ONLY")
+        respostas = self.conexao.execute(consulta)
+        return respostas
+
+
     def pegar_nome_cliente(self, cnpj):
         try:
             consulta = f"select nome, observacoes_gerais from inaflex.clientes where cgc='{cnpj}'"

@@ -1,41 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>uteis</class>
- <widget class="QWidget" name="uteis">
+ <class>estudo_pedido</class>
+ <widget class="QWidget" name="estudo_pedido">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>406</width>
-    <height>351</height>
+    <width>400</width>
+    <height>210</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>SII - Uteis</string>
   </property>
-  <widget class="QPushButton" name="btnPdf">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>70</y>
-     <width>91</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>11</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-radius: 10px; border: 1px solid rgb(0,0,0);  background-color: #CDC99B;    color: white;</string>
-   </property>
-   <property name="text">
-    <string>PDF</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
@@ -74,7 +51,7 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>20</x>
      <y>10</y>
      <width>371</width>
      <height>31</height>
@@ -91,19 +68,19 @@
     <string notr="true">color: white;</string>
    </property>
    <property name="text">
-    <string>UTEIS</string>
+    <string>ANALISE DE CUSTO DO PEDIDO</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="btnDemanda">
+  <widget class="QPushButton" name="btnCalcular">
    <property name="geometry">
     <rect>
-     <x>153</x>
-     <y>70</y>
-     <width>91</width>
-     <height>71</height>
+     <x>260</x>
+     <y>90</y>
+     <width>111</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="font">
@@ -117,127 +94,117 @@
     <string notr="true">border-radius: 10px; border: 1px solid rgb(0,0,0);  background-color: #CDC99B;    color: white;</string>
    </property>
    <property name="text">
-    <string>DEMANDA
- POR ITEM</string>
+    <string>CALCULAR</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btnEstudoDemanda">
+  <widget class="QLineEdit" name="inputPedido">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>170</y>
-     <width>91</width>
-     <height>71</height>
+     <x>90</x>
+     <y>90</y>
+     <width>151</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>11</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-radius: 10px; border: 1px solid rgb(0,0,0);  background-color: #CDC99B;    color: white;</string>
+    <string notr="true">border-radius: 10px;
+border: 1px solid #CDC99B;</string>
    </property>
-   <property name="text">
-    <string>ESTUDO 
- DEMANDA</string>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="readOnly">
+    <bool>false</bool>
+   </property>
+   <property name="clearButtonEnabled">
+    <bool>false</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="btnSelect">
+  <widget class="QLabel" name="label_pedido">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>70</y>
-     <width>91</width>
-     <height>71</height>
+     <x>32</x>
+     <y>98</y>
+     <width>41</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>11</pointsize>
      <weight>75</weight>
+     <italic>false</italic>
      <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-radius: 10px; border: 1px solid rgb(0,0,0);  background-color: #CDC99B;    color: white;</string>
+    <string notr="true">color: black;
+font: bold</string>
    </property>
    <property name="text">
-    <string>SELECT</string>
+    <string>ITEM</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="btnAnaliseOps">
+  <widget class="QLabel" name="label_resultado">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>170</y>
-     <width>91</width>
-     <height>71</height>
+     <x>32</x>
+     <y>150</y>
+     <width>41</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>11</pointsize>
      <weight>75</weight>
+     <italic>false</italic>
      <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-radius: 10px; border: 1px solid rgb(0,0,0);  background-color: #CDC99B;    color: white;</string>
+    <string notr="true">color: black;
+font: bold</string>
    </property>
    <property name="text">
-    <string>ANALISE 
- OPS/OCS</string>
+    <string>CUSTO:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="btnInspecao">
+  <widget class="QLabel" name="label_valor">
    <property name="geometry">
     <rect>
-     <x>153</x>
-     <y>170</y>
-     <width>91</width>
-     <height>71</height>
+     <x>90</x>
+     <y>150</y>
+     <width>281</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>11</pointsize>
      <weight>75</weight>
+     <italic>false</italic>
      <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-radius: 10px; border: 1px solid rgb(0,0,0);  background-color: #CDC99B;    color: white;</string>
+    <string notr="true">color: black;
+font: bold</string>
    </property>
    <property name="text">
-    <string>RELATÓRIO
- INSPEÇÃO</string>
+    <string>ITEM</string>
    </property>
-  </widget>
-  <widget class="QPushButton" name="btnEstudoPedido">
-   <property name="geometry">
-    <rect>
-     <x>290</x>
-     <y>260</y>
-     <width>91</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>11</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-radius: 10px; border: 1px solid rgb(0,0,0);  background-color: #CDC99B;    color: white;</string>
-   </property>
-   <property name="text">
-    <string>ESTUDO 
- PEDIDO</string>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
    </property>
   </widget>
  </widget>

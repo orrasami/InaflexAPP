@@ -8,6 +8,7 @@ from modulo_pdf import PdfMerger
 from modulo_analise_necessidade import AnaliseNecessidade
 from modulo_inspecao_final import Inspecao
 from modulo_estudo_demanda import EstudoDemanda
+from modulo_estudo_pedido import EstudoPedido
 
 
 class Uteis(QMainWindow, Ui_uteis):
@@ -20,8 +21,9 @@ class Uteis(QMainWindow, Ui_uteis):
         self.btnSelect.clicked.connect(self.select)
         self.btnInspecao.clicked.connect(self.inspecao)
         self.btnAnaliseOps.clicked.connect(self.analise_necessidade)
-        self.btnSelect.show()
         self.btnEstudoDemanda.clicked.connect(self.estudo_demanda)
+        self.btnEstudoPedido.clicked.connect(self.estudo_pedido)
+        self.btnSelect.show()
 
         # Janela PDF
         self.widget_pdf = QtWidgets.QStackedWidget()
@@ -59,6 +61,12 @@ class Uteis(QMainWindow, Ui_uteis):
         self.widget_estudo_demanda.addWidget(self.janela_estudo_demanda)
         self.widget_estudo_demanda.setFixedSize(400, 210)
 
+        # Janela Estudo Pedido
+        self.widget_estudo_pedido = QtWidgets.QStackedWidget()
+        self.janela_estudo_pedido = EstudoPedido(self.widget_estudo_pedido)
+        self.widget_estudo_pedido.addWidget(self.janela_estudo_pedido)
+        self.widget_estudo_pedido.setFixedSize(400, 156)
+
     def abrir_demanda(self):
         self.widget_demanda.show()
 
@@ -76,3 +84,6 @@ class Uteis(QMainWindow, Ui_uteis):
 
     def estudo_demanda(self):
         self.widget_estudo_demanda.show()
+
+    def estudo_pedido(self):
+        self.widget_estudo_pedido.show()

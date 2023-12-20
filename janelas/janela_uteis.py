@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_uteis(object):
     def setupUi(self, uteis):
         uteis.setObjectName("uteis")
-        uteis.resize(406, 258)
+        uteis.resize(406, 351)
         self.btnPdf = QtWidgets.QPushButton(uteis)
         self.btnPdf.setGeometry(QtCore.QRect(20, 70, 91, 71))
         font = QtGui.QFont()
@@ -90,6 +90,15 @@ class Ui_uteis(object):
         self.btnInspecao.setFont(font)
         self.btnInspecao.setStyleSheet("border-radius: 10px; border: 1px solid rgb(0,0,0);  background-color: #CDC99B;    color: white;")
         self.btnInspecao.setObjectName("btnInspecao")
+        self.btnEstudoPedido = QtWidgets.QPushButton(uteis)
+        self.btnEstudoPedido.setGeometry(QtCore.QRect(290, 260, 91, 71))
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.btnEstudoPedido.setFont(font)
+        self.btnEstudoPedido.setStyleSheet("border-radius: 10px; border: 1px solid rgb(0,0,0);  background-color: #CDC99B;    color: white;")
+        self.btnEstudoPedido.setObjectName("btnEstudoPedido")
 
         self.retranslateUi(uteis)
         QtCore.QMetaObject.connectSlotsByName(uteis)
@@ -108,3 +117,5 @@ class Ui_uteis(object):
 " OPS/OCS"))
         self.btnInspecao.setText(_translate("uteis", "RELATÓRIO\n"
 " INSPEÇÃO"))
+        self.btnEstudoPedido.setText(_translate("uteis", "ESTUDO \n"
+" PEDIDO"))
