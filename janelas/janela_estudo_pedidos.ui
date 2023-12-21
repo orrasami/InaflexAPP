@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>210</height>
+    <height>156</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -132,60 +132,6 @@ border: 1px solid #CDC99B;</string>
      <x>32</x>
      <y>98</y>
      <width>41</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <weight>75</weight>
-     <italic>false</italic>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: black;
-font: bold</string>
-   </property>
-   <property name="text">
-    <string>ITEM</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_resultado">
-   <property name="geometry">
-    <rect>
-     <x>32</x>
-     <y>150</y>
-     <width>41</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <weight>75</weight>
-     <italic>false</italic>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: black;
-font: bold</string>
-   </property>
-   <property name="text">
-    <string>CUSTO:</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_valor">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>150</y>
-     <width>281</width>
      <height>20</height>
     </rect>
    </property>

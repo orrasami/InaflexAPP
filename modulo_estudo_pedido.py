@@ -8,6 +8,7 @@ import openpyxl
 import xlsxwriter
 import json
 import datetime
+from openpyxl import load_workbook
 
 
 path_download = ''
@@ -151,31 +152,71 @@ class EstudoPedido(QMainWindow, Ui_estudo_pedido):
             self.gerar_relatorio(path_download, lista_ordenada)
 
     def gerar_relatorio(self, caminho, lista):
+        fazer = True
+        indice = 1
+        indice_text = ''
         workbook = xlsxwriter.Workbook(caminho + 'custo_pedido.xlsx')
-        worksheet = workbook.add_worksheet('Relatorio')
-        worksheet.write(0, 0, 'indice')
-        worksheet.write(0, 1, 'pai')
-        worksheet.write(0, 2, 'preco_venda')
-        worksheet.write(0, 3, 'custo')
-        worksheet.write(0, 4, 'produto')
-        worksheet.write(0, 5, 'quantidade')
-        worksheet.write(0, 6, 'tipo')
-        worksheet.write(0, 7, 'processo')
-        worksheet.write(0, 8, 'processo')
-        row = 1
-        try:
-            for item in lista:
-                worksheet.write(row, 0, item['indice'])
-                worksheet.write(row, 1, item['pai'])
-                worksheet.write(row, 2, item['preco_venda'])
-                worksheet.write(row, 3, item['custo'])
-                worksheet.write(row, 4, item['produto'])
-                worksheet.write(row, 5, item['quantidade'])
-                worksheet.write(row, 6, item['tipo'])
-                worksheet.write(row, 7, item['processo'])
-                worksheet.write(row, 8, item['custo'] * item['quantidade'])
-                row += 1
-            workbook.close()
-            QMessageBox.about(self, "Sucesso", "Arquivo Gerado")
-        except:
-            QMessageBox.about(self, "Erro", "Erro ao puchar os dados")
+        while fazer:
+            fazer = False
+            if len(str(indice)) == 1:
+                indice_text = f"0{str(indice)}"
+            elif len(str(indice)) == 2:
+                indice_text = f"{str(indice)}"
+            else:
+                indice_text = 'erro'
+                QMessageBox.about(self, "Erro", "Pedido contem mais de 100 itens o programa não suporta")
+            worksheet = workbook.add_worksheet(f'Item {indice_text}')
+            worksheet.write(0, 0, 'Valor de Venda')
+            worksheet.write(0, 1, 'Custo Total')
+            worksheet.write(0, 2, 'Custo/Venda')
+            worksheet.write(0, 1, 'indice')
+            worksheet.write(0, 4, 'indice')
+            worksheet.write(0, 5, 'pai')
+            worksheet.write(0, 6, 'preco_venda')
+            worksheet.write(0, 7, 'custo')
+            worksheet.write(0, 8, 'produto')
+            worksheet.write(0, 9, 'quantidade')
+            worksheet.write(0, 10, 'tipo')
+            worksheet.write(0, 11, 'processo')
+            worksheet.write(0, 12, 'soma custos')
+            row = 1
+            try:
+                soma_custo = 0
+                soma_preco = 0
+                for item in lista:
+                    indice_item = item['indice']
+                    if indice_item[:2] == indice_text:
+                        fazer = True
+                        if item['preco_venda']:
+                            preco_venda = item['preco_venda']
+                        else:
+                            preco_venda = 0
+                        custo = item['custo']
+                        quantidade = item['quantidade']
+                        worksheet.write(row, 4, item['indice'])
+                        worksheet.write(row, 5, item['pai'])
+                        worksheet.write(row, 6, preco_venda)
+                        worksheet.write(row, 7, custo)
+                        worksheet.write(row, 8, item['produto'])
+                        worksheet.write(row, 9, quantidade)
+                        worksheet.write(row, 10, item['tipo'])
+                        worksheet.write(row, 11, item['processo'])
+                        worksheet.write(row, 12, custo * quantidade)
+                        soma_preco = soma_preco + (preco_venda * quantidade)
+                        soma_custo = soma_custo + (custo * quantidade)
+                        row += 1
+                if fazer:
+                    worksheet.write(1, 0, soma_preco)
+                    worksheet.write(1, 1, soma_custo)
+                    worksheet.write(1, 2, (soma_custo/soma_preco))
+                indice += 1
+            except:
+                QMessageBox.about(self, "Erro", "Erro ao puchar os dados")
+        workbook.close()
+
+        wb = load_workbook(caminho + 'custo_pedido.xlsx')
+        if f'Item {indice_text}' in wb.sheetnames:
+            wb.remove(wb[f'Item {indice_text}'])
+        wb.save(caminho + 'custo_pedido.xlsx')
+
+        QMessageBox.about(self, "Sucesso", "Arquivo Gerado")
