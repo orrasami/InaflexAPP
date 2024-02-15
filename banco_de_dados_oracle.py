@@ -347,6 +347,7 @@ class BDBohm:
         return pedido
 
     def analisar_itens_pedidos(self, codigo):
+        unidade = ''
         lista_itens = []
         lista_itens_pedidos = []
         lista_itens_ops_materiais = []
@@ -424,11 +425,11 @@ class BDBohm:
             lista_itens.append(item)
 
         # LISTA DE PRODUTOS EM OCS A RECEBER
-        consulta = f"SELECT I.CHAVE_OC, P.CODIGO, I.SALDO " \
-                   f"FROM INAFLEX.OC_MP_ITENS I, INAFLEX.OC_MP O, INAFLEX.PRODUTOS P " \
+        consulta = f"SELECT  I.CHAVE_OC, P.CODIGO, I.SALDO, I.UNIDADE AS UN_COMPRA, P.CUBAGEM, U.UNIDADE AS UN_ITEM " \
+                   f"FROM INAFLEX.OC_MP_ITENS I , INAFLEX.OC_MP O, INAFLEX.PRODUTOS P, INAFLEX.UNIDADES U " \
                    f"WHERE I.SALDO > 0 AND (I.CHAVE_OC = O.CHAVE) AND (I.CHAVE_MATERIAL = P.CPROD) " \
-                   f"AND (O.STATUS = 'EM ABERTO') " \
-                   f"AND (O.DESCONSIDERAR_SEMANA = 'SIM')"  #ISSO DESCONSIDERA A OC DA ANALISE DE NECESSIDADE
+                   f"AND (O.STATUS = 'EM ABERTO') AND (U.CHAVE = P.CHAVE_UNIDADE_PRODUCAO)" \
+                   f"AND (O.DESCONSIDERAR_SEMANA = 'SIM')"  #SE NÃO, O ITEM NÃO ENTRA NA ANALISE DE NECESSIDADE NO ANALYSIS E AQUI
         if codigo != "":
             consulta += f"AND(P.CODIGO = '{codigo}')"
         respostas = self.conexao.execute(consulta)
@@ -436,7 +437,15 @@ class BDBohm:
             item = {}
             item['oc'] = resposta[0]
             item['item'] = resposta[1]
-            item['qtd'] = resposta[2]
+            qtd = resposta[2]
+            un_compra = resposta[3]
+            un_item = resposta[5]
+            cubagem = resposta[4]
+            if un_item != un_compra:
+                qtd_conv = qtd / cubagem
+                item['qtd'] = qtd_conv
+            else:
+                item['qtd'] = resposta[2]
             lista_itens_oc.append(item)
             lista_itens.append(item)
 

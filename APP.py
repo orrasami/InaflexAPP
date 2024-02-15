@@ -133,28 +133,16 @@ if __name__ == "__main__":
 
     # ACERTAR ISSO PARA MODO DESENVOLVIMENTO. ELE VAI LOGAR COM O nome-usuario QUE ESTIVER AI
     desenvolvimento = False
-    nome_usuario = 'SAMI'
 
-    if not desenvolvimento:
-        resultado_login, logado = log_in(bd_worflow_ok, bd_arquivos_ok, bd_oracle_ok)
-        try:
-            direito = resultado_login['direito']
-            usuario = resultado_login['id']
-            nome_usuario = resultado_login['nomeUsuario']
-            if not logado:
-                exit()
-        except:
-            exit()
-    else:
-        resultado_login = {'ativo': b'\x01', 'direito': '1', 'email': 'sami@inaflex.com.br', 'email_responsavel': '0',
-                           'id': 1, 'orcamentista': '0', 'senhaUsuario': '0048', 'nomeUsuario': nome_usuario}
+    resultado_login, logado = log_in(bd_worflow_ok, bd_arquivos_ok, bd_oracle_ok, desenvolvimento)
+    try:
         direito = resultado_login['direito']
         usuario = resultado_login['id']
         nome_usuario = resultado_login['nomeUsuario']
-        logado = True
-        bd_worflow_ok = 'OK'
-        bd_arquivos_ok = 'OK'
-        bd_oracle_ok = 'OK'
+        if not logado:
+            exit()
+    except:
+        exit()
 
     if nome_usuario == 'SAMI':
         desenvolvimento = True

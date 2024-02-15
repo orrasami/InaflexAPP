@@ -7,7 +7,7 @@ import sys
 
 
 class JanelaLogin(QMainWindow):
-    def __init__(self, bd_worflow_ok, bd_arquivos_ok, bd_oracle_ok, parent=None):
+    def __init__(self, bd_worflow_ok, bd_arquivos_ok, bd_oracle_ok, desenvolvimento, parent=None):
         super().__init__(parent)
         self.logado = False
         self.resultado = ''
@@ -16,16 +16,21 @@ class JanelaLogin(QMainWindow):
             usuario_ = pegar_usuario.get().upper()
             senha = pegar_senha.get()
             if not atualizar:
-                if senha:
-                    resultado = BDWorkflow().verificar_login_db(usuario_, senha)
-                    if resultado:
-                        self.resultado = resultado[0]
-                        self.logado = True
-                        janela.destroy()
+                if not desenvolvimento:
+                    if senha:
+                        resultado = BDWorkflow().verificar_login_db(usuario_, senha)
+                        if resultado:
+                            self.resultado = resultado[0]
+                            self.logado = True
+                            janela.destroy()
+                        else:
+                            QMessageBox.about(self, "Login", "Informações erradas")
                     else:
                         QMessageBox.about(self, "Login", "Informações erradas")
                 else:
-                    QMessageBox.about(self, "Login", "Informações erradas")
+                    self.resultado = {'direito':1, 'id':1, 'nomeUsuario':usuario_}
+                    self.logado = True
+                    janela.destroy()
             else:
                 QMessageBox.about(self, "Login", "Favor Atualizar APP")
 
@@ -92,8 +97,8 @@ class JanelaLogin(QMainWindow):
         janela.mainloop()
 
 
-def log_in(bd_worflow_ok, bd_arquivos_ok, bd_oracle_ok):
-    janela_login = JanelaLogin(bd_worflow_ok, bd_arquivos_ok, bd_oracle_ok)
+def log_in(bd_worflow_ok, bd_arquivos_ok, bd_oracle_ok, desenvolvimento):
+    janela_login = JanelaLogin(bd_worflow_ok, bd_arquivos_ok, bd_oracle_ok, desenvolvimento)
     resultado = janela_login.resultado
     logado = janela_login.logado
     return resultado, logado

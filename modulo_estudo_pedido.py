@@ -1,4 +1,4 @@
-# 2.6 ESTUDO DEMANDA
+# 2.9 ESTUDO DEMANDA
 from janelas.janela_estudo_pedidos import *
 from PyQt5.QtWidgets import QMainWindow, QFileDialog, QMessageBox, QWidget, QShortcut
 from PyQt5.QtCore import QDate
@@ -149,13 +149,14 @@ class EstudoPedido(QMainWindow, Ui_estudo_pedido):
                 QMessageBox.about(self, "Erro", f"Item {produto_erro} não tem custo cadastrado")
                 break
         if gerar_relatorio:
-            self.gerar_relatorio(path_download, lista_ordenada)
+            self.gerar_relatorio(path_download, lista_ordenada, pedido)
 
-    def gerar_relatorio(self, caminho, lista):
+    def gerar_relatorio(self, caminho, lista, pedido):
         fazer = True
         indice = 1
         indice_text = ''
-        workbook = xlsxwriter.Workbook(caminho + 'custo_pedido.xlsx')
+        nome_arquivo = caminho + pedido + '.xlsx'
+        workbook = xlsxwriter.Workbook(nome_arquivo)
         while fazer:
             fazer = False
             if len(str(indice)) == 1:
@@ -214,9 +215,9 @@ class EstudoPedido(QMainWindow, Ui_estudo_pedido):
                 QMessageBox.about(self, "Erro", "Erro ao puchar os dados")
         workbook.close()
 
-        wb = load_workbook(caminho + 'custo_pedido.xlsx')
+        wb = load_workbook(nome_arquivo)
         if f'Item {indice_text}' in wb.sheetnames:
             wb.remove(wb[f'Item {indice_text}'])
-        wb.save(caminho + 'custo_pedido.xlsx')
+        wb.save(nome_arquivo)
 
         QMessageBox.about(self, "Sucesso", "Arquivo Gerado")
